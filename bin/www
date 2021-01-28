@@ -16,7 +16,7 @@ const mongoose = require('mongoose');
 const port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
-mongoose.connect("mongodb://localhost:27017/services", {    
+mongoose.connect("mongodb+srv://natasha:Y3cB9rW6quwWzGqJ@cluster0.e4r6n.mongodb.net/shop?retryWrites=true&w=majority", {    
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
