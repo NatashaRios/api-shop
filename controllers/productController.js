@@ -75,7 +75,7 @@ class ProductController{
     const { name, price, description, category, stock, freeshipping } = req.body;
     const { id } = req.params;
     
-    if(id && name && description && category && stock && freeshipping && req.user){
+    if(id && name && description && category && stock && req.user){
       const product = {
         name: name,
         price: price,
