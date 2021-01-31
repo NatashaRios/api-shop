@@ -35,7 +35,7 @@ class ProductController{
   async postProduct(req, res){
     const { name, price, description, category, stock, freeshipping } = req.body;
     
-    if(name && price && description && category && stock && freeshipping && req.user){
+    if(name && price && description && category && stock && req.user){
       const product = {
         name: name,
         price: price,
@@ -52,6 +52,7 @@ class ProductController{
         res.status(500).send('Creation failed');
       };
     }else{
+      console.log(freeshipping)
       res.status(400).send('Information is missing');
     };
   };
