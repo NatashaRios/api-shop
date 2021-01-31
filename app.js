@@ -17,8 +17,18 @@ const sessionMidleware = session({
   secret: 's3rvic3s k3y',
   saveUninitialized: false,
   resave: false
-})
+});
+
 const app = express();
+
+app.use(
+  require('cors')({
+    origin: function (origin, callback){
+      callback(null, origin);
+    },
+    credentials: true
+  })
+);
 
 app.use(logger('dev'));
 app.use(express.json());
